@@ -25,6 +25,11 @@ import { ListaPedidosCompletaComponent } from './pages/lista-pedidos-completa/li
 import { ListaPedidosComponent } from './pages/lista-pedidos/lista-pedidos.component';
 import { FormComprarProdutoComponent } from './pages/form-comprar-produto/form-comprar-produto.component';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { httpInterceptorProviders } from './servicos/Interceptor';
+import { DetalhesLojaComponent } from './pages/detalhes-loja/detalhes-loja.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { GoogleMapsComponent } from './pages/google-maps/google-maps.component';
+import { FormLojaComponent } from './pages/form-loja/form-loja.component';
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -47,13 +52,17 @@ registerLocaleData(ptBr);
     ListaPedidosCompletaComponent,
     ListaPedidosComponent,
     FormComprarProdutoComponent,
+    DetalhesLojaComponent,
+    GoogleMapsComponent,
+    FormLojaComponent,
   ],
   imports: [
     GoogleChartsModule,
     BrowserModule,
     MainRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    GoogleMapsModule,
   ],
   providers: [   
     { provide: LOCALE_ID, useValue: 'pt' },
@@ -62,6 +71,7 @@ registerLocaleData(ptBr);
       useValue: 'BRL',
     },
      LoginGuard,
+     httpInterceptorProviders
   ],
   bootstrap: [AppComponent]
 
