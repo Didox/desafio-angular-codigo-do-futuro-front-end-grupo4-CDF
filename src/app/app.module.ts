@@ -31,6 +31,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { GoogleMapsComponent } from './pages/google-maps/google-maps.component';
 import { FormLojaComponent } from './pages/form-loja/form-loja.component';
 import { ListaLojasComponent } from './pages/lista-lojas/lista-lojas.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -65,6 +66,7 @@ registerLocaleData(ptBr);
     HttpClientModule,
     FormsModule,
     GoogleMapsModule,
+    NgbModule,
   ],
   providers: [   
     { provide: LOCALE_ID, useValue: 'pt' },

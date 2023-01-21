@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Loja } from 'src/app/models/loja';
 import { LojaService } from 'src/app/servicos/loja.service';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-lista-lojas',
@@ -12,7 +13,8 @@ export class ListaLojasComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private lojaService: LojaService
+    private lojaService: LojaService,
+    private modalService : NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -37,4 +39,20 @@ export class ListaLojasComponent implements OnInit {
       this.lojas = await this.lojaService.lista()
     }
 }
+
+openModal(content:any) {
+  this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+    (result) => {
+      console.log("Modal Closed")
+    },
+    (reason) => {
+      console.log("Modal Dimissed")
+    },
+  );
+}
+
+options: google.maps.MapOptions = {
+  center: {lat: 41.40338, lng: - 2.17403},
+  zoom: 15
+};
 }
