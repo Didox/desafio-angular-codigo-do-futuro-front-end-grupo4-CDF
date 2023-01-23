@@ -64,7 +64,7 @@ export class FormClienteComponent implements OnInit {
 
    async registrar(){
     if(this.cliente && this.cliente.id > 0){
-      this.cliente.cidade=this.estadoSelecionado.split("-")[1].trim()
+      this.cliente.estado=this.estadoSelecionado.split("-")[1].trim()
       this.cliente.cidade=this.municipioSelecionado.split("-")[1].trim()
       let cliente = this.verificaUndefined()
         if(cliente){
@@ -77,6 +77,9 @@ export class FormClienteComponent implements OnInit {
       else{
         let cliente = this.verificaUndefined()
         if(cliente){
+          console.log(cliente)
+          this.cliente.estado=this.estadoSelecionado.split("-")[1].trim()
+          this.cliente.cidade=this.municipioSelecionado.split("-")[1].trim()
           await this.clienteServico.criar(this.cliente);
           this.router.navigateByUrl("/clientes");
         }

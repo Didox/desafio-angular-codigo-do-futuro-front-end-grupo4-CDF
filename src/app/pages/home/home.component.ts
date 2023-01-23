@@ -382,12 +382,15 @@ export class HomeComponent implements OnInit {
     this.pedidosProdutosSelecionados.forEach(pedidoProduto => {
       let val1 = total;
       total += Number(pedidoProduto.valor) * Number(pedidoProduto.quantidade);
+      console.log(pedidoProduto.quantidade)
+      console.log(total)
       if (val1 > total) {
         negativo += val1 - total
       } else {
         positivo += total - val1
       }
     })
+    console.log(this.valorTotal)
     this.valorTotal = total;
     this.valorPositivo = positivo;
     this.valorNegativo = negativo;
