@@ -53,8 +53,9 @@ export class ListaPedidosCompletaComponent implements OnInit {
   somaTotal(){
     let valorTotal = 0;
     this.pedidos?.forEach(index => {
-      valorTotal += Number(index.valor_total);
+      valorTotal += Number(index.valor_total);      
     })
+    
     return Number(valorTotal)
   }
 
