@@ -32,6 +32,7 @@ import { GoogleMapsComponent } from './pages/google-maps/google-maps.component';
 import { FormLojaComponent } from './pages/form-loja/form-loja.component';
 import { ListaLojasComponent } from './pages/lista-lojas/lista-lojas.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CadastroUsuarioComponent } from './pages/cadastro-usuario/cadastro-usuario.component';
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -58,6 +59,7 @@ registerLocaleData(ptBr);
     GoogleMapsComponent,
     FormLojaComponent,
     ListaLojasComponent,
+    CadastroUsuarioComponent,
   ],
   imports: [
     GoogleChartsModule,

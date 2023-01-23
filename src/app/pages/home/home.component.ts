@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
 
   //Variáveis com dataBinding
   public categoriaSelecionado:String="";
-  public dataInicial:String = "01/01/2022";
+  public dataInicial:String = "01/01/2023";
   public dataFinal:String = String(new Date(Date.now()));
   public dataMaxima:String = String(new Date(Date.now()));
   public valorTotal:Number=0;
@@ -358,6 +358,8 @@ export class HomeComponent implements OnInit {
       this.produtos.push(produto);
     })
     this.produtosSelecionados = this.produtos;
+    console.log("aodwaokdoawkdwoakdwo")
+    console.log(this.produtosSelecionados)
   }
 
   private async listaDePedidosProdutos() {

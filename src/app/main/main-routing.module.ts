@@ -17,11 +17,13 @@ import { DetalhesLojaComponent } from '../pages/detalhes-loja/detalhes-loja.comp
 import { GoogleMapsComponent } from '../pages/google-maps/google-maps.component';
 import { FormLojaComponent } from '../pages/form-loja/form-loja.component';
 import { ListaLojasComponent } from '../pages/lista-lojas/lista-lojas.component';
+import { CadastroUsuarioComponent } from '../pages/cadastro-usuario/cadastro-usuario.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, canActivate:[LoginGuard]},
   {path: 'home', component: HomeComponent, canActivate:[LoginGuard]},
   {path: 'login', component: LoginComponent},
+  {path: 'cadastroUsuario', component: CadastroUsuarioComponent},
   {path: 'pedidos', component:ListaPedidosComponent, canActivate:[LoginGuard]},
   {path: 'lista-completa', component:ListaPedidosCompletaComponent, canActivate:[LoginGuard]},
   {path: 'produtos', component: ProdutosComponent, canActivate:[LoginGuard]},

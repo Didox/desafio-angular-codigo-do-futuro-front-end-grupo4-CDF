@@ -25,18 +25,6 @@ export class LoginComponent implements OnInit {
   public senha:String = ""
   public mensagem:string = ""
 
-  // logar(){
-  //   if(this.email === "admin@admin.com" && this.senha === "123456"){
-  //     localStorage.setItem("logado", "true")
-  //     this.router.navigateByUrl("/home")
-  //   }
-  //   else{
-  //     this.mensagem = "Usuário ou senha inválidos"
-  //     this.email = ""
-  //     this.senha = ""
-  //   }
-  // }
-
   async login(){
     try{
       this.usuario.email = this.email;
@@ -46,6 +34,7 @@ export class LoginComponent implements OnInit {
       this.router.navigateByUrl("/home")
     }catch (error){
       console.error(error)
+      this.mensagem = "Usuario ou senha incorretos"
     }
 
   }

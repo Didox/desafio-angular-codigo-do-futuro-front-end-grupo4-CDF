@@ -1,4 +1,8 @@
 export interface Usuario {
-    email: String
-    senha: String
+    id: Number,
+    nome: String,
+    email: String,
+    senha: String,
+    permissao: String
+
 }
