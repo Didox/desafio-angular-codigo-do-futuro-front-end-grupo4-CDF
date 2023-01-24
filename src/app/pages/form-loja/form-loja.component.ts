@@ -68,7 +68,7 @@ export class FormLojaComponent implements OnInit {
       let loja = this.loja
         if(loja){
           await this.lojaService.update(loja);
-          this.router.navigateByUrl("/home");
+          this.router.navigateByUrl("/lojas");
           console.log(loja)
         }
     }
@@ -81,14 +81,12 @@ export class FormLojaComponent implements OnInit {
           this.loja.cidade=this.municipioSelecionado.split("-")[1].trim()
           console.log(loja)
           await this.lojaService.criar(this.loja);
-          this.router.navigateByUrl("/home");
+          this.router.navigateByUrl("/lojas");
         }
       }
     }
   }
 
-
-  
 
   number(val:String){
     return Number(val);
