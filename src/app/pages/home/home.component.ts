@@ -158,7 +158,6 @@ export class HomeComponent implements OnInit {
     for (let i = 1; i < data.length; i++) {
       data[i][1]+=data[i-1][1];
     }
-    console.log("line", data)
     this.dataColum = data
     this.titleColum = title
   }
@@ -192,7 +191,6 @@ export class HomeComponent implements OnInit {
       }
     }
     produtos=vazio
-    console.log("Cama   ", produtos)
     if (produtos.length > 4) {
       let index = [0, 0, 0, 0]
       let valor = [0, 0, 0, 0]
@@ -358,8 +356,6 @@ export class HomeComponent implements OnInit {
       this.produtos.push(produto);
     })
     this.produtosSelecionados = this.produtos;
-    console.log("aodwaokdoawkdwoakdwo")
-    console.log(this.produtosSelecionados)
   }
 
   private async listaDePedidosProdutos() {
