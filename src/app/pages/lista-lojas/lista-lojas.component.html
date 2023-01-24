@@ -9,7 +9,6 @@
     </div>
     <div class="card-body">
       <div class="table-responsive">
-       
         <table class="table" cellspacing="0" width="100%">
           <thead>
             <tr>
@@ -81,41 +80,45 @@
                   </button>
                 </div>
               </td>
+              <ng-template #content let-modal class="w-100">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="modal-basic-title">
+                    Detalhes da Loja
+                  </h4>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    aria-label="Close"
+                    (click)="modal.dismiss('Cross click')"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <b>Nome:</b> {{ loja.nome }} <br />
+                  <b>Endereço:</b> {{ loja.logradouro }}<br />
+                  <b>Numero:</b> {{ loja.numero }}<br />
+                  <b>Bairro:</b> {{ loja.bairro }}<br />
+                  <b>Cep:</b> {{ loja.cep }}<br />
+                  <b>Estado:</b> {{ loja.estado }}<br />
+                  <b>Cidade:</b> {{ loja.cidade }}<br />
+                  <p *ngIf="loja.complemento">
+                    <b>complemento:</b> {{ loja.complemento }}
+                  </p>
+                  <google-map [options]="options"></google-map>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-outline-dark"
+                    (click)="modal.close('Save click')"
+                  >
+                    Fechar
+                  </button>
+                </div>
+              </ng-template>
             </tr>
           </tbody>
         </table>
       </div>
-      <ng-template #content let-modal class="w-100">
-        <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Detalhes da Loja</h4>
-          <button
-            type="button"
-            class="btn-close"
-            aria-label="Close"
-            (click)="modal.dismiss('Cross click')"
-          ></button>
-        </div>
-        <div *ngFor="let loja of lojas" class="modal-body">
-          Nome: {{ loja.nome }} <br />
-          Endereço: {{ loja.logradouro }}<br />
-          Numero: {{ loja.numero }}<br />
-          Bairro: {{ loja.bairro }}<br />
-          Cep: {{ loja.cep }}<br />
-          Estado: {{ loja.estado }}<br />
-          Cidade: {{ loja.cidade }}<br />
-          <p *ngIf="loja.complemento">complemento: {{ loja.complemento }}</p>
-          <google-map [options]="options"></google-map>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-outline-dark"
-            (click)="modal.close('Save click')"
-          >
-            Fechar
-          </button>
-        </div>
-      </ng-template>
     </div>
   </div>
 </section>
