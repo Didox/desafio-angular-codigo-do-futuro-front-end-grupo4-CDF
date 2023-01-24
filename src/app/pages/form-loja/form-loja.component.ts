@@ -6,7 +6,6 @@ import { Estado } from 'src/app/models/estado';
 import { GeocoderResponse } from 'src/app/models/geocoder-response';
 import { Loja } from 'src/app/models/loja';
 import { Municipio } from 'src/app/models/municipio';
-import { GeocodingService } from 'src/app/servicos/geocoding.service';
 import { IBGEServico } from 'src/app/servicos/IBGEServico';
 import { LojaService } from 'src/app/servicos/loja.service';
 
@@ -101,7 +100,7 @@ export class FormLojaComponent implements OnInit {
       }
     }
   }
-  
+
   number(val: String) {
     return Number(val);
   }

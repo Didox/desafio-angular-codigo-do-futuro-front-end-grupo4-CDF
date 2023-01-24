@@ -104,7 +104,7 @@
           Estado: {{ loja.estado }}<br />
           Cidade: {{ loja.cidade }}<br />
           <p *ngIf="loja.complemento">complemento: {{ loja.complemento }}</p>
-          <google-map [options]="options"></google-map>
+          <google-map [center]="{lat: loja.latitude, lng:loja.longitude}"></google-map>
         </div>
         <div class="modal-footer">
           <button

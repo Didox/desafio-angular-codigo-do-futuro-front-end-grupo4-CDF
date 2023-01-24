@@ -22,6 +22,8 @@ export class ListaLojasComponent implements OnInit {
   }
 
   public lojas: Loja[] | undefined= [];
+  latitude:Number = 0 
+  longitude:Number = 0
 
 
   novaLoja(){
@@ -30,6 +32,10 @@ export class ListaLojasComponent implements OnInit {
 
   public async listaLojas(){
     this.lojas = await this.lojaService.lista();
+    this.lojas.forEach(loja => {
+      this.latitude = loja.latitude
+      this.longitude = loja.longitude
+    });
   }
 
   
@@ -55,4 +61,5 @@ options: google.maps.MapOptions = {
   center: {lat: 41.40338, lng: - 2.17403},
   zoom: 15
 };
+
 }

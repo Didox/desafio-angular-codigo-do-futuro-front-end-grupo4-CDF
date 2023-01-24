@@ -9,6 +9,6 @@ export interface Loja {
     cidade:String,
     estado:String,
     complemento:String,
-    latitude:Number,
-    longitude:Number,
+    latitude:number,
+    longitude:number,
 }
