@@ -14,7 +14,7 @@ pipelines:
             - npm install --force
             - npm run prd
           artifacts:
-            - dist/**  
+            - dist/** 
       - step:
           name: Deploy to Firebase
           deployment: production
