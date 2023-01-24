@@ -7,4 +7,7 @@ html {
 body {
     margin: 0 0 100px;
 }
+.modal-content {
+    width: 107% !important;
+}
 
