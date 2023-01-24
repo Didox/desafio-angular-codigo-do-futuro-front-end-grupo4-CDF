@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev": "node index.js"
+    "dev": "node index.js",
+    "prd": "ng build --configuration production --aot"
   },
   "private": true,
   "dependencies": {
