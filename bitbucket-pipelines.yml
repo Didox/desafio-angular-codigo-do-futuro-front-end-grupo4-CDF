@@ -12,7 +12,7 @@ pipelines:
           name: Build
           script:
             - npm install --force
-            - ng build --configuration production --aot
+            - npm run prd
           artifacts:
             - dist/**  
       - step:
