@@ -28,7 +28,7 @@
                   </thead>
                   <tbody>
                     <tr *ngFor="let produto of produtos" style="vertical-align: middle">
-                      <th scope="row">{{produto.id}}</th>
+                      <td scope="row">{{produto.id}}</td>
                       <td>{{this.nomesCategorias[number(produto.categoria_id)-1]}}</td>
                       <td>{{produto.nome}}</td>
                       <td>{{produto.descricao}}</td>
