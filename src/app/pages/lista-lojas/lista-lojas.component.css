@@ -16,12 +16,7 @@
     width: 100%;
 }
 
-.row {
-    padding-top: 15px;
-    margin-left: 0px;
-    margin-right: 0px;
-    width: 970px;
-}
+
 
 .button01 {
     display: flex;
@@ -33,25 +28,8 @@
 
 }
 
-tbody {
-    vertical-align: middle;
-}
 
-thead {
-    display: table;
-    width: 100%;
-}
 
-.table {
-    width: 100%;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-between;
-    justify-content: space-between;
-    border-collapse: collapse;
-}
 
 .tds {
     width: 41px;
@@ -62,9 +40,7 @@ thead {
     align-items: center;
 }
 
-tr {
-    vertical-align: middle;
-}
+
 
 .acoes {
     padding-left: 50px;
