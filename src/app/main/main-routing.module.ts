@@ -33,6 +33,11 @@ const routes: Routes = [
   ]},
 
   {path: 'form-loja', component: FormLojaComponent, canDeactivate:[SairDoFormGuard]},
+  {path: 'form-loja/:id', children: [
+    {path: '', redirectTo: 'alterar', pathMatch: 'full'},
+    {path: 'alterar', component: FormLojaComponent, canDeactivate:[SairDoFormGuard]}
+  ] 
+  },
   {path: 'form-produto', component: FormProdutosComponent, canDeactivate:[SairDoFormGuard]},
   {path: 'form-produto/:id', children: [
     {path: '', redirectTo: 'alterar', pathMatch: 'full'},

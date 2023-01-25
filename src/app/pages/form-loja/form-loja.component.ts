@@ -41,6 +41,9 @@ export class FormLojaComponent implements OnInit {
     this.importarEstados();
   }
 
+  latitude = 0
+  longitude = 0
+
   private async editaLoja(id: Number) {
     this.tituloDoBotao = "Alterar";
     this.loja = await this.lojaService.buscaPorId(id);
@@ -60,42 +63,50 @@ export class FormLojaComponent implements OnInit {
     this.municipioSelecionado = "1- ";
   }
 
-  geoconding() {
+  geoconding(callback:any) {
     var geocoder = new google.maps.Geocoder();
     var address = `${this.loja?.logradouro}, ${this.loja?.numero} - ${this.loja?.bairro}, ${this.loja?.cidade} - ${this.loja?.estado}, ${this.loja?.cep}, BRAZIL`
     geocoder.geocode({ 'address': address }, (results: any, status) => {
       if (status == google.maps.GeocoderStatus.OK) {
-        this.loja.latitude = results[0].geometry.location.lat();
-        this.loja.longitude = results[0].geometry.location.lng();
+        this.latitude = results[0].geometry.location.lat();
+        this.longitude = results[0].geometry.location.lng();
+        console.log(this.latitude)
+        console.log(this.longitude)
+        callback.call()
       } else {
         console.log("Request failed.", this.loja);
       }
     })
   }
   async registrar() {
-    this.geoconding();
     if (this.loja && this.loja.id > 0) {
-      this.geoconding();
-      this.loja.estado = this.estadoSelecionado.split("-")[1].trim()
-      this.loja.cidade = this.municipioSelecionado.split("-")[1].trim()
-      let loja = this.loja
-      if (loja) {
-        await this.lojaService.update(loja);
-        this.router.navigateByUrl("/lojas");
-        console.log(loja)
-      }
+      this.geoconding(async ()=>{
+        this.loja.estado = this.estadoSelecionado.split("-")[1].trim()
+        this.loja.cidade = this.municipioSelecionado.split("-")[1].trim()
+        this.loja.latitude = this.latitude
+        this.loja.longitude = this.longitude
+        let loja = this.loja
+        if (loja) {
+          await this.lojaService.update(loja);
+          this.router.navigateByUrl("/lojas");
+          console.log(loja)
+        }
+      });
     }
     else {
       if (!this.loja) { }
       else {
         let loja = this.loja
         if (loja) {
-          this.geoconding();
+          this.geoconding(async ()=>{
           this.loja.estado = this.estadoSelecionado.split("-")[1].trim()
           this.loja.cidade = this.municipioSelecionado.split("-")[1].trim()
+          this.loja.latitude = this.latitude
+          this.loja.longitude = this.longitude
           await this.lojaService.criar(this.loja);
           console.log(loja)
           this.router.navigateByUrl("/lojas");
+        });
         }
       }
     }
