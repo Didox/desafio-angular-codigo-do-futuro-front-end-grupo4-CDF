@@ -87,11 +87,11 @@ export class FormProdutosComponent implements OnInit {
     if(this.categoriaSelecionado.split("-")[0]!=""){
       categoria_id=new Number(this.categoriaSelecionado.split("-")[0])
     }
-    console.log(categoria_id)
     let descricao:String = "";
     let valor:Number = 0;
     let qtd_estoque:Number = 0;
     let custo:Number = 0;
+    let fotoUrl:String = "";
 
     if(this.produto?.id) id = this.produto.id;
     
@@ -103,6 +103,11 @@ export class FormProdutosComponent implements OnInit {
     if(this.produto?.descricao && !(this.produto.descricao==="")) descricao = this.produto.descricao;
     else{       
       alert("Por favor digite uma descrição válido");      
+      return undefined;     
+    }
+    if(this.produto?.fotoUrl && !(this.produto.fotoUrl==="")) fotoUrl = this.produto.fotoUrl;
+    else{       
+      alert("Por favor digite uma url para foto valida");      
       return undefined;     
     }
     if(this.produto?.valor && !(this.produto.valor===0)) valor = this.produto.valor;
@@ -118,7 +123,7 @@ export class FormProdutosComponent implements OnInit {
     if(this.produto?.custo && !(this.produto.custo===0)) custo = this.produto.custo;
     else{       
       alert("Por favor digite um custo válido");      
-      return undefined;     
+      return undefined;   
     }
 
     let produto = {
@@ -128,7 +133,8 @@ export class FormProdutosComponent implements OnInit {
       descricao: descricao,
       valor: valor,
       qtd_estoque: qtd_estoque,
-      custo:custo
+      custo:custo,
+      fotoUrl:fotoUrl
     }
 
     return produto

@@ -6,4 +6,5 @@ export interface Produto {
     qtd_estoque: Number
     categoria_id: Number
     custo:Number
+    fotoUrl:String
 }
