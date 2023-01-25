@@ -3,6 +3,7 @@ import { CdkDragDrop, copyArrayItem, moveItemInArray, transferArrayItem } from '
 import { ProdutoServico } from 'src/app/servicos/produtoServico';
 import { Produto } from 'src/app/models/produto';
 import { Router } from '@angular/router';
+import { CampanhaService } from 'src/app/servicos/campanha.service';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class CampanhasComponent implements OnInit {
 
   constructor(
     private produtoService: ProdutoServico,
+    private campanhaService: CampanhaService,
     private router: Router,
   ) { }
 
@@ -30,6 +32,8 @@ export class CampanhasComponent implements OnInit {
  async listaProdutos(){
  this.produtos = await this.produtoService.lista();
   }
+
+  
 
   drop(event: CdkDragDrop<Produto[]>) {
     if (event.previousContainer === event.container) {
