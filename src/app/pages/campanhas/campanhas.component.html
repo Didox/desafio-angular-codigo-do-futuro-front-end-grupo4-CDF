@@ -1,28 +1,43 @@
-<div class="example-container">
-    <h3>Produtos</h3>
-  
+<div cdkDropListGroup>
+  <div class="example-container">
+    <h2>To do</h2>
+
     <div
       cdkDropList
-      #todoList="cdkDropList"
       [cdkDropListData]="produtos"
-      [cdkDropListConnectedTo]="[doneList]"
       class="example-list"
       (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let item of produtos" cdkDrag>{{item.nome}}</div>
     </div>
   </div>
-  
-  <div class="example-container">
-    <h3>Produtos selecionados</h3>
+
+  <!-- <div class="example-container">
+    <h2>Done</h2>
+
     <div
       cdkDropList
-      #doneList="cdkDropList"
-      [cdkDropListData]="produtosSelecionados"
-      [cdkDropListConnectedTo]="[todoList]"
+      [cdkDropListData]="prateleira"
       class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of produtosSelecionados" cdkDrag>{{item.nome}}</div>
+      <div class="example-box" *ngFor="let item of prateleira" cdkDrag>{{item.nome}}</div>
     </div>
   </div>
+</div> -->
+<h4>Prateleira 1</h4>
+<div cdkDropList
+ cdkDropListOrientation="horizontal"
+  class="example-list" 
+  [cdkDropListData]="prateleira"
+  (cdkDropListDropped)="drop($event)">
   
+  <div class="example-box" *ngFor="let timePeriod of prateleira" cdkDrag>{{timePeriod.nome}}</div>
+</div>
+<h4>Prateleira 2</h4>
+<div cdkDropList
+ cdkDropListOrientation="horizontal"
+  class="example-list" 
+  [cdkDropListData]="prateleira2"
+  (cdkDropListDropped)="drop($event)">
   
+  <div class="example-box" *ngFor="let timePeriod of prateleira2" cdkDrag>{{timePeriod.nome}}</div>
+</div>

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, copyArrayItem, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { ProdutoServico } from 'src/app/servicos/produtoServico';
 import { Produto } from 'src/app/models/produto';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -19,7 +18,9 @@ export class CampanhasComponent implements OnInit {
   ) { }
 
   public produtos: Produto[] | undefined = [];
-  public produtosSelecionados: Produto[] | undefined = [];
+  public prateleira: Produto[] | undefined = [];
+  public prateleira2: Produto[] | undefined = [];
+  public prateleira3: Produto[] | undefined = [];
 
 
   ngOnInit(): void {
@@ -43,3 +44,4 @@ export class CampanhasComponent implements OnInit {
     }
   }
 }
+
