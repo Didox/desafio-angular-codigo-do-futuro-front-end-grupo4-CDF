@@ -33,6 +33,8 @@ import { FormLojaComponent } from './pages/form-loja/form-loja.component';
 import { ListaLojasComponent } from './pages/lista-lojas/lista-lojas.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CadastroUsuarioComponent } from './pages/cadastro-usuario/cadastro-usuario.component';
+import { CampanhasComponent } from './pages/campanhas/campanhas.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -60,6 +62,8 @@ registerLocaleData(ptBr);
     FormLojaComponent,
     ListaLojasComponent,
     CadastroUsuarioComponent,
+    CampanhasComponent,
+    
   ],
   imports: [
     GoogleChartsModule,
@@ -69,6 +73,7 @@ registerLocaleData(ptBr);
     FormsModule,
     GoogleMapsModule,
     NgbModule,
+    DragDropModule,
   ],
   providers: [   
     { provide: LOCALE_ID, useValue: 'pt' },

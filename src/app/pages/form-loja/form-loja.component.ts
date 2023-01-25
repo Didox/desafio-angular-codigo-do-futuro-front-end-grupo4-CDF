@@ -3,7 +3,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Estado } from 'src/app/models/estado';
-import { GeocoderResponse } from 'src/app/models/geocoder-response';
 import { Loja } from 'src/app/models/loja';
 import { Municipio } from 'src/app/models/municipio';
 import { IBGEServico } from 'src/app/servicos/IBGEServico';
@@ -70,8 +69,6 @@ export class FormLojaComponent implements OnInit {
       if (status == google.maps.GeocoderStatus.OK) {
         this.latitude = results[0].geometry.location.lat();
         this.longitude = results[0].geometry.location.lng();
-        console.log(this.latitude)
-        console.log(this.longitude)
         callback.call()
       } else {
         console.log("Request failed.", this.loja);
@@ -89,7 +86,6 @@ export class FormLojaComponent implements OnInit {
         if (loja) {
           await this.lojaService.update(loja);
           this.router.navigateByUrl("/lojas");
-          console.log(loja)
         }
       });
     }

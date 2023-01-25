@@ -1,9 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Produto } from "../models/produto";
+import { Injectable } from '@angular/core';
 
 import { firstValueFrom } from 'rxjs';
 
+@Injectable({
+    providedIn: 'root'
+  })
 export class ProdutoServico{
 
     constructor(private http:HttpClient) { }

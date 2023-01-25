@@ -18,6 +18,7 @@ import { GoogleMapsComponent } from '../pages/google-maps/google-maps.component'
 import { FormLojaComponent } from '../pages/form-loja/form-loja.component';
 import { ListaLojasComponent } from '../pages/lista-lojas/lista-lojas.component';
 import { CadastroUsuarioComponent } from '../pages/cadastro-usuario/cadastro-usuario.component';
+import { CampanhasComponent } from '../pages/campanhas/campanhas.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, canActivate:[LoginGuard]},
@@ -44,6 +45,7 @@ const routes: Routes = [
     {path: 'alterar', component: FormProdutosComponent, canDeactivate:[SairDoFormGuard]}
   ] 
   },
+  {path: 'campanhas', component: CampanhasComponent},
   {path: 'lojas', component: ListaLojasComponent},
   {path: 'detalhes-loja', component: DetalhesLojaComponent, canActivate:[LoginGuard]},
   {path: 'teste', component: GoogleMapsComponent, canActivate:[LoginGuard]},

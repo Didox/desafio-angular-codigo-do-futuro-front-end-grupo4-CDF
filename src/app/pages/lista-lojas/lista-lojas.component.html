@@ -103,7 +103,11 @@
                   <p *ngIf="loja.complemento">
                     <b>complemento:</b> {{ loja.complemento }}
                   </p>
-                  <google-map [center]="{lat: loja.latitude, lng: loja.longitude}"></google-map>
+                  <google-map [center]="{lat: loja.latitude, lng: loja.longitude}">
+                    <map-marker
+                      [position]="{lat: loja.latitude, lng: loja.longitude}"
+                    ></map-marker>
+                  </google-map>
                 </div>
                 <div class="modal-footer">
                   <button
