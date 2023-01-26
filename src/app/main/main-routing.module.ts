@@ -14,7 +14,6 @@ import { ListaPedidosComponent } from '../pages/lista-pedidos/lista-pedidos.comp
 import { FormComprarProdutoComponent } from '../pages/form-comprar-produto/form-comprar-produto.component';
 import { SairDoFormGuard } from '../servicos/sair-do-form.guard';
 import { DetalhesLojaComponent } from '../pages/detalhes-loja/detalhes-loja.component';
-import { GoogleMapsComponent } from '../pages/google-maps/google-maps.component';
 import { FormLojaComponent } from '../pages/form-loja/form-loja.component';
 import { ListaLojasComponent } from '../pages/lista-lojas/lista-lojas.component';
 import { CadastroUsuarioComponent } from '../pages/cadastro-usuario/cadastro-usuario.component';
@@ -48,7 +47,6 @@ const routes: Routes = [
   {path: 'campanhas', component: CampanhasComponent},
   {path: 'lojas', component: ListaLojasComponent},
   {path: 'detalhes-loja', component: DetalhesLojaComponent, canActivate:[LoginGuard]},
-  {path: 'teste', component: GoogleMapsComponent, canActivate:[LoginGuard]},
   {path: 'carrinho',component: CarrinhoComponent, canActivate:[LoginGuard]},
   {path: 'clientes', component: ListaClienteComponent, canActivate:[LoginGuard]},
   {path: 'form-clientes', component: FormClienteComponent, canActivate:[LoginGuard], canDeactivate:[SairDoFormGuard]},

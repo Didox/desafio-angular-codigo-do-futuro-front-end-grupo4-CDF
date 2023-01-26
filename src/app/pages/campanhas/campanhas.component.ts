@@ -25,25 +25,36 @@ export class CampanhasComponent implements OnInit {
   public prateleira3: Produto[] | undefined = [];
 
 
+  
   ngOnInit(): void {
     this.listaProdutos();
+  }
+
+  getElement(){
+    var posicao: HTMLElement = document.getElementById('produto'); 
+    var posicaoDom: DOMRect = posicao.getBoundingClientRect();
+    var posisaox = posicaoDom.x
+    var posicaoy = posicaoDom.y
+    console.log(posisaox)
+    console.log(posicaoy)
   }
 
  async listaProdutos(){
  this.produtos = await this.produtoService.lista();
   }
 
-  
 
   drop(event: CdkDragDrop<Produto[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      console.log("entra aqui o ocnsole?")
     } else {
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex,
+        
       );
     }
   }

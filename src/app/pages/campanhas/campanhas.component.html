@@ -16,7 +16,13 @@
       [cdkDropListData]="produtos"
       class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of produtos" cdkDrag>{{item.nome}}</div>
+      <div  class="example-box" *ngFor="let item of produtos"cdkDrag>
+        
+        <div id="produto" (click)="getElement()">
+          {{item.nome }}
+        </div>
+        
+      </div>
     </div>
   </div>
 
@@ -38,7 +44,7 @@
   [cdkDropListData]="prateleira"
   (cdkDropListDropped)="drop($event)">
   
-  <div class="example-box" *ngFor="let timePeriod of prateleira" cdkDrag>{{timePeriod.nome}}</div>
+  <div id="produto" class="example-box"  (click)="getElement()" *ngFor="let timePeriod of prateleira" cdkDrag>{{timePeriod.nome}}</div>
 </div>
 <h4>Prateleira 2</h4>
 <div cdkDropList
@@ -47,5 +53,5 @@
   [cdkDropListData]="prateleira2"
   (cdkDropListDropped)="drop($event)">
   
-  <div class="example-box" *ngFor="let timePeriod of prateleira2" cdkDrag>{{timePeriod.nome}}</div>
+  <div id="produto" class="example-box" *ngFor="let  timePeriod of prateleira2" cdkDrag>{{timePeriod.nome}}</div>
 </div>

@@ -28,7 +28,6 @@ import { GoogleChartsModule } from 'angular-google-charts';
 import { httpInterceptorProviders } from './servicos/Interceptor';
 import { DetalhesLojaComponent } from './pages/detalhes-loja/detalhes-loja.component';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { GoogleMapsComponent } from './pages/google-maps/google-maps.component';
 import { FormLojaComponent } from './pages/form-loja/form-loja.component';
 import { ListaLojasComponent } from './pages/lista-lojas/lista-lojas.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -58,7 +57,6 @@ registerLocaleData(ptBr);
     ListaPedidosComponent,
     FormComprarProdutoComponent,
     DetalhesLojaComponent,
-    GoogleMapsComponent,
     FormLojaComponent,
     ListaLojasComponent,
     CadastroUsuarioComponent,
