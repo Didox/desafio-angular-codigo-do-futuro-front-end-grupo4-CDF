@@ -33,4 +33,9 @@ public async buscaPorId(id:Number): Promise<Campanha | undefined> {
 public excluirPorId(id:Number) {
     firstValueFrom(this.http.delete(`${environment.api}/campanhas/${id}`))
 }
+
+public async getLast(): Promise<Campanha | undefined> {
+    let campanha = await firstValueFrom(this.http.get<Campanha>(`${environment.api}/campanhasLast`))
+    return campanha;
+}
 }

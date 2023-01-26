@@ -15,6 +15,9 @@ export class ListaCampanhasComponent implements OnInit, OnChanges{
     private modalService: NgbModal
   ) {}
 
+
+  public campanha:Campanha | undefined = {} as Campanha;
+
   ngOnInit(): void {
     this.listarCampanhas();
   
@@ -38,6 +41,10 @@ export class ListaCampanhasComponent implements OnInit, OnChanges{
 
     
     }
+  }
+
+  adicionarCampanha(){
+    this.campanhaService.criar(this.campanha);
   }
 
   openModal(content: any) {

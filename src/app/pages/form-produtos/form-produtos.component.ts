@@ -81,7 +81,7 @@ export class FormProdutosComponent implements OnInit {
   }
 
   verificaUndefined(){
-    let nome:String = "";
+    let nome:string = "";
     let categoria_id=this.categoria_id
     let id:Number=0
     if(this.categoriaSelecionado.split("-")[0]!=""){

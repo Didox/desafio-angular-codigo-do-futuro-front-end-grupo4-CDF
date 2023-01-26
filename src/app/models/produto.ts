@@ -1,6 +1,6 @@
 export interface Produto {
     id: Number
-    nome: String
+    nome: string
     descricao: String
     valor: Number
     qtd_estoque: Number
