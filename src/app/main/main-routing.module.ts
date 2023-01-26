@@ -18,6 +18,7 @@ import { FormLojaComponent } from '../pages/form-loja/form-loja.component';
 import { ListaLojasComponent } from '../pages/lista-lojas/lista-lojas.component';
 import { CadastroUsuarioComponent } from '../pages/cadastro-usuario/cadastro-usuario.component';
 import { CampanhasComponent } from '../pages/campanhas/campanhas.component';
+import { ListaCampanhasComponent } from '../pages/lista-campanhas/lista-campanhas.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, canActivate:[LoginGuard]},
@@ -44,7 +45,7 @@ const routes: Routes = [
     {path: 'alterar', component: FormProdutosComponent, canDeactivate:[SairDoFormGuard]}
   ] 
   },
-  {path: 'campanhas', component: CampanhasComponent},
+  {path: 'form-campanhas', component: CampanhasComponent},
   {path: 'lojas', component: ListaLojasComponent},
   {path: 'detalhes-loja', component: DetalhesLojaComponent, canActivate:[LoginGuard]},
   {path: 'carrinho',component: CarrinhoComponent, canActivate:[LoginGuard]},
@@ -55,7 +56,10 @@ const routes: Routes = [
     {path: 'alterar', component: FormClienteComponent, canDeactivate:[SairDoFormGuard]}
   ] 
   },
+  {path: 'campanhas', component: ListaCampanhasComponent, canActivate:[LoginGuard]},
+
   {path: '**', component: NotFoundComponent}
+  
 ];
 
 @NgModule({

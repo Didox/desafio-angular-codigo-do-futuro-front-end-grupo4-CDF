@@ -34,6 +34,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CadastroUsuarioComponent } from './pages/cadastro-usuario/cadastro-usuario.component';
 import { CampanhasComponent } from './pages/campanhas/campanhas.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ListaCampanhasComponent } from './pages/lista-campanhas/lista-campanhas.component';
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -61,6 +62,7 @@ registerLocaleData(ptBr);
     ListaLojasComponent,
     CadastroUsuarioComponent,
     CampanhasComponent,
+    ListaCampanhasComponent,
     
   ],
   imports: [
