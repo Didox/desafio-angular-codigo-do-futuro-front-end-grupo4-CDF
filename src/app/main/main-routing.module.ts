@@ -46,6 +46,10 @@ const routes: Routes = [
   ] 
   },
   {path: 'form-campanhas', component: CampanhasComponent},
+  {path: 'form-campanha/:id', children: [
+    {path: '', redirectTo: 'alterar', pathMatch: 'full'},
+    {path: 'alterar', component: CampanhasComponent, canDeactivate:[SairDoFormGuard]}
+  ]},
   {path: 'lojas', component: ListaLojasComponent},
   {path: 'detalhes-loja', component: DetalhesLojaComponent, canActivate:[LoginGuard]},
   {path: 'carrinho',component: CarrinhoComponent, canActivate:[LoginGuard]},

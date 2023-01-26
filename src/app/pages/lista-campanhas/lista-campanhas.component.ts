@@ -46,6 +46,7 @@ export class ListaCampanhasComponent implements OnInit, OnChanges{
   adicionarCampanha(){
     this.campanhaService.criar(this.campanha);
   }
+  
 
   openModal(content: any) {
     this.modalService
