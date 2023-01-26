@@ -1,3 +1,38 @@
+.page-section{
+    display: grid;
+    justify-content: center;
+    margin-top: 5px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-bottom: 5px;
+    margin-right: 6px;
+    margin-left: 6px;
+    box-sizing: border-box;
+}
+
+
+
+.form{
+    
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.form-group{
+padding-right: 5px;
+}
+
+.lateral{
+    display: flex;
+  
+}
+
+.container{
+    background: #f8f8f8;
+    border-radius: 10px;
+    text-align-last: left;
+}
 .span1 {
   display: flex;
   flex-wrap: wrap;

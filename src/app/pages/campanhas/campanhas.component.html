@@ -2,7 +2,50 @@
   <h2 class="span1">LISTA DE CAMPANHAS</h2>
   <div class="container">
     <div class="">
-      <a routerLink="" class="btn btn-primary">Nova Campanha</a>
+      <form class="form">
+        <div class="lateral">
+          <div class="form-group">
+            <label class="p-1 pt-3">Nome</label>
+            <input
+              type="text"
+              class="form-control mt-1"
+              id="nome-campnha"
+              name="nome-campnha"
+              placeholder="Insira o nome"
+            />
+            <!--[(ngModel)]="campanha.nome" -->
+          </div>
+          <div class="form-group">
+            <label class="p-1 pt-3">Descrição</label>
+            <input
+              type="text"
+              class="form-control mt-1"
+              id="desc-campnha"
+              name="desc-campnha"
+              placeholder="Insira a descrição"
+            />
+            <!--[(ngModel)]="campanha.descricao" -->
+          </div>
+          <div class="form-group">
+            <label class="p-1 pt-3">Link</label>
+            <input
+              type="text"
+              class="form-control mt-1"
+              id="url-campnha"
+              name="url-campnha"
+              placeholder="Insira a URL da foto"
+            />
+            <!--[(ngModel)]="campanha.urlblablabal" -->
+          </div>
+          <button
+            class="btn btn-primary btn-xl m-2 mt-5"
+            id="submitButton"
+            type="button"
+          >
+            Cadastrar
+          </button>
+        </div>
+      </form>
     </div>
     <div
       cdkDropListGroup
