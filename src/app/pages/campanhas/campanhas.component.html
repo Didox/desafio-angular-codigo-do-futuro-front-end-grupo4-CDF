@@ -4,9 +4,12 @@
     <div class="">
       <a routerLink="" class="btn btn-primary">Nova Campanha</a>
     </div>
-    <div cdkDropListGroup class="d-flex flex-row-reverse justify-content-between">
-      <div class="example-container">
-        <h2>To do</h2>
+    <div
+      cdkDropListGroup
+      class="d-flex flex-row-reverse justify-content-between"
+    >
+      <div class="example-container d-flex flex-column align-items-center">
+        <h2>PRODUTOS</h2>
 
         <div
           cdkDropList
@@ -20,12 +23,11 @@
         </div>
       </div>
 
-      <div>
-        <h2>Prateleira 1</h2>
+      <div class="pt-5">
         <div
           cdkDropList
           cdkDropListOrientation="horizontal"
-          class="prateleira"
+          class="prateleira stuffonshelf-1"
           [cdkDropListData]="prateleira"
           (cdkDropListDropped)="drop($event)"
         >
@@ -37,16 +39,16 @@
             <img
               src="{{ timePeriod.fotoUrl }}"
               alt="Image"
-              height="80"
-              width="80"
+              height="100"
+              width="100"
             />
           </div>
         </div>
-        <h4>Prateleira 2</h4>
+        <img class="shelf mt-4" />
         <div
           cdkDropList
           cdkDropListOrientation="horizontal"
-          class="example-list"
+          class="prateleira stuffonshelf"
           [cdkDropListData]="prateleira2"
           (cdkDropListDropped)="drop($event)"
         >
@@ -55,9 +57,36 @@
             *ngFor="let timePeriod of prateleira2"
             cdkDrag
           >
-            {{ timePeriod.nome }}
+            <img
+              src="{{ timePeriod.fotoUrl }}"
+              alt="Image"
+              height="100"
+              width="100"
+            />
           </div>
         </div>
+        <img class="shelf" />
+        <div
+          cdkDropList
+          cdkDropListOrientation="horizontal"
+          class="prateleira stuffonshelf"
+          [cdkDropListData]="prateleira3"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <div
+            class="example-box"
+            *ngFor="let timePeriod of prateleira3"
+            cdkDrag
+          >
+            <img
+              src="{{ timePeriod.fotoUrl }}"
+              alt="Image"
+              height="80"
+              width="80"
+            />
+          </div>
+        </div>
+        <img class="shelf" />
       </div>
     </div>
   </div>
