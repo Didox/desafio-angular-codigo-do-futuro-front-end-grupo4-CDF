@@ -44,7 +44,6 @@ export class CampanhasComponent implements OnInit {
     this.popularPrateleiras();
     console.log(this.campanha.id)
   }
-
 async getlasCampanha(){
  this.campanha = await this.campanhaService.getLast();
 }
